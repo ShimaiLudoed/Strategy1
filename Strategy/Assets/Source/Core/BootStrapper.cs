@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class BootStrapper : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private List<IAttack> attackList;
+    private IAttack _simple;
+    private IAttack _super;
+    private IAttack _ultra;
+    private PlayerController _playerController;
+    [SerializeField] private StrategySwitcher _changeStrategy;
+    [SerializeField] private InputListener _inputListener;
+    //[SerializeField] private InputListenerUI _inputUI;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        attackList = new List<IAttack>
+        {
+            _simple,
+            _super,
+            _ultra
+        };
+
+        _playerController = new PlayerController(_changeStrategy);
+        _inputListener.Construct(_playerController);
     }
 }

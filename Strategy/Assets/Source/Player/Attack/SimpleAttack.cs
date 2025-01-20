@@ -7,6 +7,6 @@ public class SimpleAttack : IAttack
 {
     public void Attack()
     {
-        Console.WriteLine("Use Simple attack");
+        Debug.Log("Use Simple attack");
     }
 }

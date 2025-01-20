@@ -7,6 +7,6 @@ public class SuperAttack : IAttack
 {
     public void Attack()
     {
-        Console.WriteLine("Use Super attack");
+        Debug.Log("Use SUPER attack");
     }
 }

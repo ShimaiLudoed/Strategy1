@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class InputListener : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private PlayerController _controller;
+    
+    public void Construct(PlayerController controller)
     {
-        
+        _controller = controller;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if(_controller != null)
+        {
+            if(Input.GetKeyDown(KeyCode.G))
+            {
+                _controller.Attack();
+            }
+        }
     }
 }

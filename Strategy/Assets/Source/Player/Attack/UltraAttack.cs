@@ -7,6 +7,6 @@ public class UltraAttack : IAttack
 {
     public void Attack()
     {
-        Console.WriteLine("Use Ultra attack");
+        Debug.Log("Use Ultra attack");
     }
 }
