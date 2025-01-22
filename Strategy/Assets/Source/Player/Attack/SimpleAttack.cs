@@ -3,10 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SimpleAttack : IAttack
+namespace Attack
 {
-    public void Attack()
+    public class SimpleAttack : IAttack
     {
-        Debug.Log("Use Simple attack");
+        public void Attack()
+        {
+            Debug.Log("Use Simple attack");
+        }
     }
 }

@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IAttack
+namespace Attack
 {
-    public void Attack()
-    {}
+    public interface IAttack
+    {
+        void Attack();
+    }
 }

@@ -3,10 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UltraAttack : IAttack
+namespace Attack
 {
-    public void Attack()
+    public class UltraAttack : IAttack
     {
-        Debug.Log("Use Ultra attack");
+        public void Attack()
+        {
+            Debug.Log("Use Ultra attack");
+        }
     }
 }

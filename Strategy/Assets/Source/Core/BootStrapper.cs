@@ -1,28 +1,38 @@
+using Attack;
+using Player;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BootStrapper : MonoBehaviour
+namespace Core
 {
-    private List<IAttack> attackList;
-    private IAttack _simple;
-    private IAttack _super;
-    private IAttack _ultra;
-    private PlayerController _playerController;
-    [SerializeField] private StrategySwitcher _changeStrategy;
-    [SerializeField] private InputListener _inputListener;
-    //[SerializeField] private InputListenerUI _inputUI;
-
-    private void Start()
+    public class BootStrapper : MonoBehaviour
     {
-        attackList = new List<IAttack>
+        private List<IAttack> attackList;
+        private IAttack _simple;
+        private IAttack _super;
+        private IAttack _ultra;
+        private PlayerController _playerController;
+        [SerializeField] private StrategySwitcher _changeStrategy;
+        [SerializeField] private InputListener _inputListener;
+        private AttackPerformer _attackPerformer;
+
+        private void Awake()
+        {
+            _simple = new SimpleAttack();
+            _super = new SuperAttack();
+            _ultra = new UltraAttack();
+
+            attackList = new List<IAttack>
         {
             _simple,
             _super,
             _ultra
         };
-
-        _playerController = new PlayerController(_changeStrategy);
-        _inputListener.Construct(_playerController);
+            _attackPerformer = new AttackPerformer(_simple);
+            _changeStrategy.Construct(attackList, _attackPerformer);
+            _playerController = new PlayerController(_attackPerformer);
+            _inputListener.Construct(_playerController);
+        }
     }
 }

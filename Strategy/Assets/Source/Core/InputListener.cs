@@ -1,23 +1,27 @@
+using Player;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InputListener : MonoBehaviour
+namespace Core
 {
-    private PlayerController _controller;
-    
-    public void Construct(PlayerController controller)
+    public class InputListener : MonoBehaviour
     {
-        _controller = controller;
-    }
+        private PlayerController _controller;
 
-    private void Update()
-    {
-        if(_controller != null)
+        public void Construct(PlayerController controller)
         {
-            if(Input.GetKeyDown(KeyCode.G))
+            _controller = controller;
+        }
+
+        private void Update()
+        {
+            if (_controller != null)
             {
-                _controller.Attack();
+                if (Input.GetKeyDown(KeyCode.G))
+                {
+                    _controller.Attack();
+                }
             }
         }
     }
