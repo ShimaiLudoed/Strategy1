@@ -7,11 +7,10 @@ namespace Attack
 {
     public class UltraAttack : IAttack
     {
-        private Animator animator;
         public void Attack(Animator animator)
         {
             Debug.Log("Use Ultra attack");
-            animator.SetTrigger("Ultra");
+            animator.SetTrigger(AnimatorParametrContainer.ULTRA_ATTACK_HASH);
         }
     }
 }

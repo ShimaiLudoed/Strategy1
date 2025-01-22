@@ -7,7 +7,6 @@ namespace Attack
 {
     public class SuperAttack : IAttack
     {
-        private Animator animator;
         public void Attack(Animator animator)
         {
             Debug.Log("Use SUPER attack");

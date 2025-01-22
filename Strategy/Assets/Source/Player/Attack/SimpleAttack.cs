@@ -7,8 +7,6 @@ namespace Attack
 {
     public class SimpleAttack : IAttack
     {
-        private Animator animator;
-
         public void Attack(Animator animator)
         {
             Debug.Log("Use Simple attack");
