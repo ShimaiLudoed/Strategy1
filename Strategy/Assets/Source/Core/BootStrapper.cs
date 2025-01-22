@@ -8,6 +8,7 @@ namespace Core
 {
     public class BootStrapper : MonoBehaviour
     {
+        [SerializeField] private Animator animator;
         private List<IAttack> attackList;
         private IAttack _simple;
         private IAttack _super;
@@ -29,7 +30,7 @@ namespace Core
             _super,
             _ultra
         };
-            _attackPerformer = new AttackPerformer(_simple);
+            _attackPerformer = new AttackPerformer(_simple,animator);
             _changeStrategy.Construct(attackList, _attackPerformer);
             _playerController = new PlayerController(_attackPerformer);
             _inputListener.Construct(_playerController);

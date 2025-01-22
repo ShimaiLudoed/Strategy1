@@ -6,15 +6,17 @@ namespace Attack
 {
     public class AttackPerformer
     {
+        private Animator _animator;
         public IAttack AttackStrategy { get; set; }
 
-        public AttackPerformer(IAttack attackStrategy)
+        public AttackPerformer(IAttack attackStrategy, Animator animator)
         {
+            _animator = animator;
             AttackStrategy = attackStrategy;
         }
         public void ExecuteAlgoritm()
         {
-            AttackStrategy.Attack();
+            AttackStrategy.Attack(_animator);
         }
         public void SetStrategy(IAttack attack)
         {

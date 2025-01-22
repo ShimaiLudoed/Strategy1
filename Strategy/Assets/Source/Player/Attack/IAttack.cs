@@ -6,6 +6,6 @@ namespace Attack
 {
     public interface IAttack
     {
-        void Attack();
+        void Attack(Animator animator);
     }
 }
