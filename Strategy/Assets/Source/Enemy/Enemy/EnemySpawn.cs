@@ -7,9 +7,9 @@ namespace Enemy
 {
     public class EnemySpawn : ABaseEnemy
     {
-        protected override void Attack()
+        public override void Attack()
         {
-            animator.SetTrigger("Spawn");
+            animator.SetTrigger(AnimatorParametrContainer.SPAWN_HASH);
         }
     }
 }

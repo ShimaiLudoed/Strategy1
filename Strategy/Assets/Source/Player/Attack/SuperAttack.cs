@@ -10,7 +10,7 @@ namespace Attack
         public void Attack(Animator animator)
         {
             Debug.Log("Use SUPER attack");
-            animator.SetTrigger("Super");
+            animator.SetTrigger(AnimatorParametrContainer.SUPER_ATTACK_HASH);
         }
     }
 }

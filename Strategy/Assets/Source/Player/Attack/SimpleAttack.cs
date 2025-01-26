@@ -10,7 +10,7 @@ namespace Attack
         public void Attack(Animator animator)
         {
             Debug.Log("Use Simple attack");
-            animator.SetTrigger("Simple");
+            animator.SetTrigger(AnimatorParametrContainer.SIMPLE_ATTACK_HASH);
         }
     }
 }

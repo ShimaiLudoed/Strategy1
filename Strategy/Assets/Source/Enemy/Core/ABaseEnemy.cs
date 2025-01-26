@@ -7,9 +7,9 @@ namespace Enemy
     public abstract class ABaseEnemy : MonoBehaviour
     {
         [SerializeField] protected Animator animator;
-        protected abstract void Attack();
+        public abstract void Attack();
 
-        private void Start()
+        protected virtual void Start()
         {
             Attack();
         }

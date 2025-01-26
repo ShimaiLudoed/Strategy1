@@ -6,14 +6,17 @@ namespace Enemy
 {
     public class EnemyFire : ABaseEnemy
     {
-        protected override void Attack()
+        public override void Attack()
         {
             StartCoroutine(Fire());
         }
         private IEnumerator Fire()
         {
-            animator.SetTrigger("Fire");
-            yield return new WaitForSeconds(1);
+            while (true)
+            {
+                yield return new WaitForSeconds(1);
+                animator.SetTrigger(AnimatorParametrContainer.FIRE_HASH);   
+            }
         }
     }
 }
